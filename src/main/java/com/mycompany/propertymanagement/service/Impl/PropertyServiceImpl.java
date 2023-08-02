@@ -19,7 +19,6 @@ public class PropertyServiceImpl implements PropertyService {
     @Autowired
     private PropertyConverter propertyConverter;
 
-
     @Override
     public PropertyDTO saveProperty(PropertyDTO propertyDTO) {
 
@@ -55,8 +54,6 @@ public class PropertyServiceImpl implements PropertyService {
         if (optionalPropertyEntity.isPresent()){
             PropertyEntity pe = optionalPropertyEntity.get();
             pe.setTitle(propertyDTO.getTitle());
-            pe.setOwnerName(propertyDTO.getOwnerName());
-            pe.setOwnerEmail(propertyDTO.getOwnerEmail());
             pe.setAddress(propertyDTO.getAddress());
             pe.setDescription(propertyDTO.getDescription());
             pe.setPrice(propertyDTO.getPrice());
