@@ -2,11 +2,11 @@ package com.mycompany.propertymanagement.converter;
 
 import com.mycompany.propertymanagement.dto.UserDTO;
 import com.mycompany.propertymanagement.entity.UserEntity;
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import java.util.Optional;
-
 @Component
+@NoArgsConstructor
 public class UserConverter {
     private UserDTO userDTO;
     public UserEntity convertDTOToEntity (UserDTO userDTO){

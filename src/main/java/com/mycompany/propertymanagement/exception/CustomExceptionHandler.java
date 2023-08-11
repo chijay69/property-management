@@ -1,9 +1,5 @@
 package com.mycompany.propertymanagement.exception;
-import java.util.ArrayList;
-import java.util.List;
 
-import lombok.Getter;
-import lombok.Setter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -12,6 +8,9 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 @ControllerAdvice
@@ -22,7 +21,7 @@ public class CustomExceptionHandler {
     public ResponseEntity<List<ErrorModel>> handleFieldValidation(MethodArgumentNotValidException mav){
 
         List<ErrorModel> errorModelList = new ArrayList<>();
-        ErrorModel errorModel = null;
+        ErrorModel errorModel = new ErrorModel();
         List<FieldError> fieldErrorList = mav.getBindingResult().getFieldErrors();
         for (FieldError err :
                 fieldErrorList) {
