@@ -4,6 +4,8 @@ import com.mycompany.propertymanagement.dto.UserDTO;
 import com.mycompany.propertymanagement.entity.UserEntity;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 @Component
 public class UserConverter {
     private UserDTO userDTO;
